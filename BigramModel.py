@@ -57,10 +57,18 @@ def freq_to_prob(dic_term_frequency, dic_pairs_frequency):
 
 
 
-def calculate_probability(dic_term_prob, input_text):
+def calculate_probability(dic_term_prob, input_text, mode='uni'):
     prob = 0.0
-    # s_text = word_tokenize(input_text)
-    filtered_sentence = [w.lower() for w in input_text if not w.lower() in stop_words]
+    if mode == 'uni':
+      s_text = word_tokenize(input_text)
+      filtered_sentence = [w.lower() for w in s_text if not w.lower() in stop_words]
+    if mode == 'bi':
+      s_text = word_tokenize(input_text)
+      filtered_sentence = [w.lower() for w in s_text if not w.lower() in stop_words]
+      filtered_sentence = [(filtered_sentence[i], filtered_sentence[i+1]) for i in range(len(filtered_sentence) - 1)]
+    else:
+      raise ValueError('Invalid mode')
+    
     for word in filtered_sentence:
         if word in dic_term_prob.keys():
             prob += math.exp(math.log10(dic_term_prob[word]))
@@ -70,11 +78,11 @@ def calculate_probability(dic_term_prob, input_text):
             print(f'Not Found :( Word: {word}  Prob: {prob}')      
     return prob
 
-def run_model(p_dict, df):
+def run_model(p_dict, df, m):
    for i in range(len(df)):
         prob_dict = {}
         for genre in p_dict:
-            p = calculate_probability(p_dict[genre], df["Text"].iloc[i])
+            p = calculate_probability(p_dict[genre], df["Text"].iloc[i], mode=m)
             prob_dict[genre] = p 
         
         max_genre = max(prob_dict, key=prob_dict.get) # Find the genre with the maximum probability
@@ -103,8 +111,8 @@ def main():
 
     df = pd.read_csv("./test.tsv", sep='\t')
    
-    # run_model(uni_prob, df)
-    run_model(bi_prob, df) 
+    # run_model(uni_prob, df, mode='uni')
+    run_model(bi_prob, df, 'bi') 
     
 
 if __name__ == '__main__':
