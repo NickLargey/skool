@@ -83,9 +83,9 @@ def calculate_probability(dic_term_prob, input_text, mode):
     
     for word in filtered_sentence:
         if word in dic_term_prob.keys():
-            prob += math.log10(dic_term_prob[word])
+            prob += math.log(dic_term_prob[word])
         else:
-            n = 1/math.log10(len(dic_term_prob))
+            n = 1/math.log(len(dic_term_prob))
             prob += n    
     return prob
 
@@ -94,9 +94,12 @@ def mixed_model(u_prob_dict, b_prob_dict, test_df, genres):
   greek_lambda = 1
   prob_dict = {}
   best_lambda = 0
+  best_tp_cnt = 0
+  best_res_list = []
 
   while greek_lambda >= 0:
     res_list = []
+    curr_tp_cnt = 0
     for i in range(len(test_df)):
         for genre in genres:
           unigram = calculate_probability(u_prob_dict[genre], test_df["Text"].iloc[i], mode='uni')
@@ -108,15 +111,23 @@ def mixed_model(u_prob_dict, b_prob_dict, test_df, genres):
         max_genre = max(prob_dict, key=prob_dict.get)
         max_value = prob_dict[max_genre]
         true_genre = test_df['Genre'].iloc[i]
-
+        if max_genre == true_genre:
+          curr_tp_cnt += 1
         # print(f'Song # {i + 1}')    
         # print(f"Max Probability Genre: {max_genre} with probability {max_value}")
         # print(f"True Genre: {test_df['Genre'].iloc[i]}")
         res_list.append([max_genre, true_genre])
-    print(f'Lambda: {greek_lambda}')
-    confusion_matrix(res_list, genres)
-
+    
+    if curr_tp_cnt > best_tp_cnt:
+      best_tp_cnt = curr_tp_cnt
+      best_lambda = greek_lambda
+      best_res_list = res_list
+    
     greek_lambda -= 0.01
+
+  print(f'Lambda: {best_lambda}')
+  confusion_matrix(best_res_list, genres)
+
 
 def confusion_matrix(c_list, genres):
   c_matrix = pd.DataFrame(0, index=genres, columns=genres)
