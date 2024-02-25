@@ -87,7 +87,7 @@ def calculate_probability(dic_term_prob, input_text, mode):
         else:
             n = 1/math.log(len(dic_term_prob))
             prob += n    
-    return prob
+    return math.exp(prob)
 
 
 def mixed_model(u_prob_dict, b_prob_dict, test_df, genres):
@@ -99,8 +99,8 @@ def mixed_model(u_prob_dict, b_prob_dict, test_df, genres):
 
   while greek_lambda >= 0:
     res_list = []
-    curr_tp_cnt = 0
     for i in range(len(test_df)):
+        curr_tp_cnt = 0
         for genre in genres:
           unigram = calculate_probability(u_prob_dict[genre], test_df["Text"].iloc[i], mode='uni')
           bigram = calculate_probability(b_prob_dict[genre], test_df["Text"].iloc[i], mode='bi')
@@ -111,6 +111,7 @@ def mixed_model(u_prob_dict, b_prob_dict, test_df, genres):
         max_genre = max(prob_dict, key=prob_dict.get)
         max_value = prob_dict[max_genre]
         true_genre = test_df['Genre'].iloc[i]
+        
         if max_genre == true_genre:
           curr_tp_cnt += 1
         # print(f'Song # {i + 1}')    
@@ -118,11 +119,11 @@ def mixed_model(u_prob_dict, b_prob_dict, test_df, genres):
         # print(f"True Genre: {test_df['Genre'].iloc[i]}")
         res_list.append([max_genre, true_genre])
     
-    if curr_tp_cnt > best_tp_cnt:
-      best_tp_cnt = curr_tp_cnt
-      best_lambda = greek_lambda
-      best_res_list = res_list
-    
+        if curr_tp_cnt > best_tp_cnt:
+          best_tp_cnt = curr_tp_cnt
+          best_lambda = greek_lambda
+          best_res_list = res_list
+          print(f'Best TP Count: {best_tp_cnt} with Lambda: {best_lambda} with best res list: {best_res_list} \n')
     greek_lambda -= 0.01
 
   print(f'Lambda: {best_lambda}')
@@ -172,7 +173,7 @@ def build_train_val_sets(root_path = './TM_CA1_Lyrics/'):
 def main():
   
     uni_prob, bi_prob, validation_df, genres = build_train_val_sets('./TM_CA1_Lyrics/')    
-    print(validation_df.shape)      
+    
     # df = pd.read_csv("./test.tsv", sep='\t')
 
     mixed_model(uni_prob, bi_prob, validation_df, genres)

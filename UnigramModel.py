@@ -1,5 +1,6 @@
 import pprint
 import collections
+from collections import Counter
 import pandas as pd
 import math
 import os
@@ -8,8 +9,8 @@ import string
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-nltk.download('stopwords')
-nltk.download('punkt')
+# nltk.download('stopwords')
+# nltk.download('punkt')
 
 pp = pprint.PrettyPrinter()
 stop_words = set(stopwords.words('english'))
@@ -18,7 +19,7 @@ punctuation_except_apostrophe = string.punctuation.replace("'", "")
 pattern = f"[{re.escape(punctuation_except_apostrophe)}]"
 
 def read_files_in_directory(directory_path):
-    dic_term_frequency = {}
+    dic_term_frequency = collections.Counter()
 
     for file in os.listdir(directory_path):
         with open(directory_path + file, 'r') as rfile:
@@ -29,17 +30,17 @@ def read_files_in_directory(directory_path):
                 tokens = word_tokenize(current_line)
                 
                 filtered_sentence = [w for w in tokens if not w in stop_words]
-        
-                for token in filtered_sentence:
-                    if token in dic_term_frequency:
-                        dic_term_frequency[token] += 1
-                    else:
-                        dic_term_frequency[token] = 1
+                dic_term_frequency.update(filtered_sentence)
+                # for token in filtered_sentence:
+                #     if token in dic_term_frequency:
+                #         dic_term_frequency[token] += 1
+                #     else:
+                #         dic_term_frequency[token] = 1
     return dic_term_frequency
 
 
 def freq_to_prob(dic_term_frequency):
-    total_tokens = sum(dic_term_frequency.values()) + len(dic_term_frequency)
+    total_tokens = dic_term_frequency.total() + len(dic_term_frequency)
     dic_term_prob = {word: count / total_tokens for word, count in dic_term_frequency.items()}
     return dic_term_prob
 
@@ -50,10 +51,10 @@ def calculate_probability(dic_term_prob, input_text):
     filtered_sentence = [w.lower() for w in s_text if not w.lower() in stop_words]
     for word in filtered_sentence:
         if word in dic_term_prob:
-            prob += math.exp(math.log10(dic_term_prob[word]))
+            prob += math.log(dic_term_prob[word])
         else:
-            prob += -math.exp(math.log10(len(dic_term_prob))    )      
-    return prob
+            prob += math.log(1/len(dic_term_prob))      
+    return math.exp(prob)
 
 
 def main():
