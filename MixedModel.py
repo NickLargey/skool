@@ -87,11 +87,11 @@ def calculate_probability(dic_term_prob, input_text, mode):
     s_text = re.sub(f'[{punct_pattern}]', '', text)
                 
     if mode == 'uni':
-        s_text = word_tokenize(input_text)
+        s_text = word_tokenize(s_text)
         filtered_sentence = [w.lower()
                              for w in s_text if not w.lower() in stop_words]
     elif mode == 'bi':
-        s_text = word_tokenize(input_text)
+        s_text = word_tokenize(s_text)
         filtered_sentence = [w.lower()
                              for w in s_text if not w.lower() in stop_words]
         filtered_sentence = [(filtered_sentence[i], filtered_sentence[i+1])
@@ -104,7 +104,7 @@ def calculate_probability(dic_term_prob, input_text, mode):
             prob += math.log(dic_term_prob[word])
         else:
             prob += 1/math.log(len(dic_term_prob))
-    return math.exp(prob)
+    return prob
 
 
 def mixed_model(u_prob_dict, b_prob_dict, test_df, genres):
@@ -142,10 +142,10 @@ def mixed_model(u_prob_dict, b_prob_dict, test_df, genres):
             best_res_df = pd.concat(
                 [test_df, pd.DataFrame(res_df['Predicted'])], axis=1)
         
-        # print(f'Lambda: {greek_lambda:.3f}, Current Best Lambda {best_lambda:.3f}, Current True Positive Count: {curr_tp_cnt}, Best True Positive Count: {best_tp_cnt}')
         greek_lambda -= 0.01
     
-    print(f'Lambda: {best_lambda}')
+    print(f'Best Lambda: {best_lambda} \n')
+    print(best_res_df, '\n')
     confusion_matrix(best_res_df, genres)
     f1_scores, f1 = f1_score(best_res_df, genres)
     print(f'F1 Scores: {f1_scores}')
@@ -213,7 +213,7 @@ def main():
     uni_prob, bi_prob, validation_df, genres = build_train_val_sets(
         './TM_CA1_Lyrics/')
     df = pd.read_csv("./test.tsv", sep='\t')
-    mixed_model(uni_prob, bi_prob, validation_df, genres)
+    mixed_model(uni_prob, bi_prob, df, genres)
 
 
 if __name__ == '__main__':
