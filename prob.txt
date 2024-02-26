@@ -1,0 +1,111 @@
+Lambda: 1.000, Current Best Lambda 0.000, Current True Positive Count: 0, Best True Positive Count: 0
+Lambda: 0.990, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.980, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.970, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.960, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.950, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.940, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.930, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.920, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.910, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.900, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.890, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.880, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.870, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.860, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.850, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.840, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.830, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.820, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.810, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.800, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.790, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.780, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.770, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.760, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.750, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.740, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.730, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.720, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.710, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.700, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.690, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.680, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.670, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.660, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.650, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.640, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.630, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.620, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.610, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.600, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.590, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.580, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.570, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.560, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.550, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.540, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.530, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.520, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.510, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.500, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.490, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.480, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.470, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.460, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.450, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.440, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.430, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.420, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.410, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.400, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.390, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.380, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.370, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.360, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.350, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.340, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.330, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.320, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.310, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.300, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.290, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.280, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.270, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.260, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.250, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.240, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.230, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.220, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.210, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.200, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.190, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.180, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.170, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.160, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.150, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.140, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.130, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.120, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.110, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.100, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.090, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.080, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.070, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.060, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.050, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.040, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.030, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.020, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.010, Current Best Lambda 0.990, Current True Positive Count: 1, Best True Positive Count: 1
+Lambda: 0.99
+         Blues  Rock  Country  Metal  Pop  Rap
+Blues        0     0        1      0    0    0
+Rock         1     0        0      1    0    0
+Country      0     0        0      0    0    0
+Metal        0     0        0      1    0    0
+Pop          1     1        0      0    0    0
+Rap          2     0        0      0    0    0 
+
+F1 Scores: {'Blues': 0, 'Rock': 0, 'Country': 0, 'Metal': 0.6666666666666666, 'Pop': 0, 'Rap': 0}
+Average F1 Score: 0.1111111111111111

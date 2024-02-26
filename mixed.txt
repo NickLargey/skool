@@ -1,0 +1,11 @@
+Lambda: 0.99
+         Blues  Rock  Country  Metal  Pop  Rap
+Blues        0     0        1      0    0    0
+Rock         1     0        0      1    0    0
+Country      0     0        0      0    0    0
+Metal        0     0        0      1    0    0
+Pop          1     1        0      0    0    0
+Rap          2     0        0      0    0    0 
+
+F1 Scores: {'Blues': 0, 'Rock': 0, 'Country': 0, 'Metal': 0.6666666666666666, 'Pop': 0, 'Rap': 0}
+Average F1 Score: 0.1111111111111111

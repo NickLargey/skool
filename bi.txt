@@ -1,0 +1,175 @@
+Song # 1
+Max Probability Genre: Blues with probability 1.4830456803460192
+True Genre: Rap
+OrderedDict([('Blues', 1.4830456803460192),
+             ('Country', 1.3524701932650098),
+             ('Metal', 1.365282774390448),
+             ('Pop', -7.649208807146512),
+             ('Rap', -7.446688232498641),
+             ('Rock', -5.519971194320491)])
+
+
+Song # 2
+Max Probability Genre: Blues with probability 0.8898274082076114
+True Genre: Metal
+OrderedDict([('Blues', 0.8898274082076114),
+             ('Country', 0.811482115959006),
+             ('Metal', 0.8191696646342689),
+             ('Pop', 0.8030663118871234),
+             ('Rap', 0.6964266618150275),
+             ('Rock', 0.8308136802265721)])
+
+
+Song # 3
+Max Probability Genre: Blues with probability 1.4830456803460192
+True Genre: Rock
+OrderedDict([('Blues', 1.4830456803460192),
+             ('Country', 1.3524701932650098),
+             ('Metal', 1.365282774390448),
+             ('Pop', 1.3384438531452056),
+             ('Rap', 1.1607111030250459),
+             ('Rock', 1.3846894670442869)])
+
+
+Song # 4
+Max Probability Genre: Blues with probability 2.5211776565882333
+True Genre: Blues
+OrderedDict([('Blues', 2.5211776565882333),
+             ('Country', 2.299199328550517),
+             ('Metal', 2.3209807164637617),
+             ('Pop', 2.2753545503468495),
+             ('Rap', 1.9732088751425774),
+             ('Rock', 2.3539720939752877)])
+
+
+Song # 5
+Max Probability Genre: Blues with probability -3.6137397956534123
+True Genre: Pop
+OrderedDict([('Blues', -3.6137397956534123),
+             ('Country', -5.9902487726551845),
+             ('Metal', -5.172829279367506),
+             ('Pop', -3.97833704995928),
+             ('Rap', -14.953814360092313),
+             ('Rock', -12.604725243947762)])
+
+
+Song # 6
+Max Probability Genre: Blues with probability 2.3728730885536313
+True Genre: Country
+OrderedDict([('Blues', 2.3728730885536313),
+             ('Country', 2.163952309224016),
+             ('Metal', 2.184452439024717),
+             ('Pop', 2.141510165032329),
+             ('Rap', 1.8571377648400729),
+             ('Rock', -5.6054482459680735)])
+
+
+Song # 7
+Max Probability Genre: Blues with probability 4.1525279049688555
+True Genre: Metal
+OrderedDict([('Blues', 4.1525279049688555),
+             ('Country', 3.7869165411420274),
+             ('Metal', 3.822791768293255),
+             ('Pop', 3.747642788806576),
+             ('Rap', 3.249991088470129),
+             ('Rock', 3.877130507724003)])
+
+
+Song # 8
+Max Probability Genre: Blues with probability 2.2245685205190293
+True Genre: Pop
+OrderedDict([('Blues', 2.2245685205190293),
+             ('Country', 2.028705289897515),
+             ('Metal', 2.047924161585672),
+             ('Pop', 2.0076657797178084),
+             ('Rap', 1.7410666545375684),
+             ('Rock', -5.743917192672503)])
+
+
+Song # 9
+Max Probability Genre: Blues with probability 4.7457461771072635
+True Genre: Country
+OrderedDict([('Blues', 4.7457461771072635),
+             ('Country', 4.327904618448032),
+             ('Metal', 4.368904878049433),
+             ('Pop', 4.283020330064658),
+             ('Rap', 3.714275529680148),
+             ('Rock', 4.431006294541719)])
+
+
+Song # 10
+Max Probability Genre: Blues with probability 6.525400993522488
+True Genre: Rap
+OrderedDict([('Blues', 6.525400993522488),
+             ('Country', 5.950868850366043),
+             ('Metal', 6.0072442073179655),
+             ('Pop', -3.098499706452812),
+             ('Rap', -4.598882770881589),
+             ('Rock', 6.092633654994868)])
+
+
+Song # 11
+Max Probability Genre: Blues with probability 5.487269017280274
+True Genre: Pop
+OrderedDict([('Blues', 5.487269017280274),
+             ('Country', 5.0041397150805365),
+             ('Metal', 5.051546265244655),
+             ('Pop', -4.035410403654456),
+             ('Rap', -5.411380542999124),
+             ('Rock', -3.390747545735016)])
+
+
+Song # 12
+Max Probability Genre: Metal with probability 6.689885594513187
+True Genre: Metal
+OrderedDict([('Blues', 1.1714549774494918),
+             ('Country', 1.3083462612338876),
+             ('Metal', 6.689885594513187),
+             ('Pop', 1.5410141336719112),
+             ('Rap', -1.9390856776892338),
+             ('Rock', 1.2153187938845684)])
+
+
+Song # 13
+Max Probability Genre: Blues with probability 8.749969514041517
+True Genre: Rap
+OrderedDict([('Blues', 8.749969514041517),
+             ('Country', -9.174134307308728),
+             ('Metal', 8.055168368903631),
+             ('Pop', -1.0908339267350033),
+             ('Rap', -11.46521545186771),
+             ('Rock', 0.3487164623223623)])
+
+
+Song # 14
+Max Probability Genre: Metal with probability -1.2135092336352065
+True Genre: Rock
+OrderedDict([('Blues', -17.599313891387975),
+             ('Country', -26.601212493266736),
+             ('Metal', -1.2135092336352065),
+             ('Pop', -15.14893211605699),
+             ('Rap', -53.18633847667919),
+             ('Rock', -33.812203147215534)])
+
+
+Song # 15
+Max Probability Genre: Pop with probability 2.210236060244514
+True Genre: Blues
+OrderedDict([('Blues', 1.9129778176225019),
+             ('Country', 1.9845813578663924),
+             ('Metal', 0.28830181819428835),
+             ('Pop', 2.210236060244514),
+             ('Rap', -1.3587301261767113),
+             ('Rock', 1.9076635274067109)])
+
+
+         Blues  Rock  Country  Metal  Pop  Rap
+Blues        1     0        0      0    1    0
+Rock         1     0        0      1    0    0
+Country      2     0        0      0    0    0
+Metal        2     0        0      1    0    0
+Pop          3     0        0      0    0    0
+Rap          3     0        0      0    0    0 
+
+F1 Scores: {'Blues': 0.14285714285714285, 'Rock': 0, 'Country': 0, 'Metal': 0.4, 'Pop': 0, 'Rap': 0}
+Average F1 Score: 0.09047619047619049
