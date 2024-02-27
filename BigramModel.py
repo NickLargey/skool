@@ -75,8 +75,7 @@ def calculate_probability(dic_term_prob, input_text):
         if word in dic_term_prob.keys():
             prob += math.log(dic_term_prob[word])
         else:
-            n = 1/math.log(len(dic_term_prob))
-            prob += n   
+            prob += 1/math.log(len(dic_term_prob))  
     return prob
 
 def run_model(p_dict, df, genres):
@@ -89,7 +88,7 @@ def run_model(p_dict, df, genres):
 
         max_genre = max(prob_dict, key=prob_dict.get) # Find the genre with the maximum probability
         max_value = prob_dict[max_genre]
-        
+
         pred = pd.DataFrame({"Predicted": [max_genre]})
         res_df = pd.concat([res_df, pred], ignore_index=True)
 
@@ -116,7 +115,7 @@ def confusion_matrix(c_list, genres):
     for i in range(len(c_list)):
         c_matrix.loc[c_list['Genre'].iloc[i], c_list['Predicted'].iloc[i]] += 1
 
-    print(c_matrix, '\n')
+    print("Confusion Matrix: \n", c_matrix, '\n')
 
 # Precision = instances correctly classified for a class/all instances both true and false called out by the model
 # Recall = instances correctly classified for a class/all instances that truly belong to the class

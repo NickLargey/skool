@@ -136,6 +136,7 @@ def mixed_model(u_prob_dict, b_prob_dict, test_df, genres):
             res_df = pd.concat([res_df, pd.DataFrame(
                 {'Predicted': [max_genre], 'True': [true_genre]})], ignore_index=True)
 
+        # print(f'Lambda: {greek_lambda:.3f}, Current True Positive Count: {curr_tp_cnt}, Best True Positive Count: {best_tp_cnt}')
         if curr_tp_cnt > best_tp_cnt:
             best_tp_cnt = curr_tp_cnt
             best_lambda = greek_lambda
@@ -158,7 +159,7 @@ def confusion_matrix(c_list, genres):
     for i in range(len(c_list)):
         c_matrix.loc[c_list['Genre'].iloc[i], c_list['Predicted'].iloc[i]] += 1
 
-    print(c_matrix, '\n')
+    print("Confusion Matrix: \n", c_matrix, '\n')
 
 # Precision = instances correctly classified for a class/all instances both true and false called out by the model
 # Recall = instances correctly classified for a class/all instances that truly belong to the class
@@ -213,7 +214,8 @@ def main():
     uni_prob, bi_prob, validation_df, genres = build_train_val_sets(
         './TM_CA1_Lyrics/')
     df = pd.read_csv("./test.tsv", sep='\t')
-    mixed_model(uni_prob, bi_prob, df, genres)
+    # replace validation_df with df to test
+    mixed_model(uni_prob, bi_prob, validation_df, genres)
 
 
 if __name__ == '__main__':

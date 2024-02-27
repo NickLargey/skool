@@ -69,7 +69,7 @@ def confusion_matrix(c_list, genres):
     for i in range(len(c_list)):
         c_matrix.loc[c_list['Genre'].iloc[i], c_list['Predicted'].iloc[i]] += 1
 
-    print(c_matrix, '\n')
+    print("Confusion Matrix: \n", c_matrix, '\n')
 
 # Precision = instances correctly classified for a class/all instances both true and false called out by the model
 # Recall = instances correctly classified for a class/all instances that truly belong to the class

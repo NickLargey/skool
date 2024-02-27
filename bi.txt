@@ -163,7 +163,8 @@ OrderedDict([('Blues', 1.9129778176225019),
              ('Rock', 1.9076635274067109)])
 
 
-         Blues  Rock  Country  Metal  Pop  Rap
+Confusion Matrix: 
+          Blues  Rock  Country  Metal  Pop  Rap
 Blues        1     0        0      0    1    0
 Rock         1     0        0      1    0    0
 Country      2     0        0      0    0    0
