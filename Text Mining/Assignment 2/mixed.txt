@@ -1,29 +1,15 @@
-Best Lambda: 1 
+Best Lambda: 0 
 
-    Id                                               Text    Genre Predicted
-0    1  You used to call me on my cell phone Late nigh...      Rap     Blues
-1    2  If you like to gambleI tell you, I'm your man ...    Metal   Country
-2    3  A singer in a smokey roomA smell of wine and c...     Rock     Blues
-3    4  Yes, the eagle flies on Friday and Saturday I ...    Blues      Rock
-4    5  If you want my future, forget my pastIf you wa...      Pop       Pop
-5    6  Sometimes it's hard to be a womanGiving all yo...  Country     Blues
-6    7  If you like to gambleI tell you, I'm your manY...    Metal     Blues
-7    8  I hate to turn up out of the blue, uninvitedBu...      Pop     Blues
-8    9  Right now, he's probably slow dancin' with a b...  Country     Blues
-9   10  Drop the top, play hide and seek (yeah) Jump i...      Rap     Blues
-10  11  Tell the leaves not to turn But don't ever tel...      Pop     Blues
-11  12  Hey I'm feeling tired My time is gone today Yo...    Metal     Blues
-12  13  When I was young, me and my mama had beef 17 y...      Rap     Blues
-13  14  This ain't a song for the broken-hearted No si...     Rock      Rock
-14  15  They call it stormy Monday But Tuesday's just ...    Blues      Rock 
+Empty DataFrame
+Columns: []
+Index: [] 
 
-         Blues  Rock  Country  Metal  Pop  Rap
-Blues        0     2        0      0    0    0
-Rock         1     1        0      0    0    0
-Country      2     0        0      0    0    0
-Metal        2     0        1      0    0    0
-Pop          2     0        0      0    1    0
-Rap          3     0        0      0    0    0 
+Confusion Matrix: 
+          Blues  Rock  Country  Metal  Pop  Rap
+Blues        0     0        0      0    0    0
+Rock         0     0        0      0    0    0
+Country      0     0        0      0    0    0
+Metal        0     0        0      0    0    0
+Pop          0     0        0      0    0    0
+Rap          0     0        0      0    0    0 
 
-F1 Scores: {'Blues': 0, 'Rock': 0.4, 'Country': 0, 'Metal': 0, 'Pop': 0.5, 'Rap': 0}
-Average F1 Score: 0.15
