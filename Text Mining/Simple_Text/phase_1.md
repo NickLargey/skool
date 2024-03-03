@@ -28,7 +28,7 @@ We will emphasize large-scale automatic evaluation measures (SARI, ROUGE, compre
 	- evaluate them with three metrics.
 	- **Flesch reading ease** is an index that measures the level of sentences; the higher the score, the easier it is for the reader.
 	- **Flesch-Kincaid grade level** (FKGL) is an index that measures the corresponding reader level; the lower the score, the younger the reader.
-	- The percentage of academic words according to a list provided by Coxhead.
+	- The **percentage of academic words** according to a list provided by Coxhead.
 
 - **Example Prompts Used:**
 	- GPT-3.5 - Your task is to simplify the following sentences to make them
@@ -110,3 +110,50 @@ We will emphasize large-scale automatic evaluation measures (SARI, ROUGE, compre
 
 ### Text Simplification of Scientific Texts for Non-Expert Readers (2023):
 
+- **Model:**
+	- Prompt Engineering and complex phrase identification preprocessing with ChatGPT 
+	- T5
+	- PEGASUS
+
+- **ChatGPT Approach:**
+![[Pasted image 20240303121611.png]]
+	
+- Since identifying keyphrases is an already established task, we use KBIR-inspec, a pretrained model which is available on Hugginface. 
+- Since the domain of the task is scientific texts, we evaluate the complexity
+  of terms using the term statistics of two text corpora: a dataset that is comprised of texts from lifestyle forums and one that is comprised of texts from science-focused forums.
+- We obtain our complexity estimate by the difference of the inverse document   frequency (idf) of term t from the lifestyle dataset with the idf value of the
+  scientific dataset. The complexity of a phrase < t1 , ..., tn > is defined by the function φ:
+
+![[Pasted image 20240303123108.png]]
+- Here $df_{lf}$ (t) is the number of documents from the lifestyle dataset in which the term t appears,$df_{sc}(t)$ for the science dataset respectively. The total number of documents is N. We set the complexity threshold to 0.01, so every phrase above this threshold gets tagged as complex.
+- To index and analyze the datasets and term statistics, we use the PyTerrier framework.
+
+- **"Out-of-the-Box Sequence-to-Sequence Models" Approach:**
+	-  Two runs based on the T5, One run that uses PEGASUS
+	- We instruct the model to summarize all source texts. We do not consider the queries but only the source sentences, so the source_snt.
+	-  We use batch processing of texts which we want to simplify, set the maximum input length to 512 tokens per example, pad the inputs, and determine outputs to have a maximum length of 100 tokens.
+	- This leads to a model occasionally creating multiple sentences in one summarization, each fully summarizing the original text. Therefore, out of these merged simplifications (summarizations), we pick the shortest sentence as the simplified version of the original text.
+	- Readability measures have all been implemented using the Python library [textstat](https://pypi.org/project/textstat/)
+
+- **Results:**
+![[Pasted image 20240303125614.png]]
+
+![[Pasted image 20240303125816.png]]
+- Scores between 30 and 49 indicate difficult text.
+- The **new Dale-Chall** score indicates the reading level of a text as a grade corresponding to the familiarity of persons from that grade with a list of the 3000 most common English words. Scores are defined up to a value between 9 and 9.9 which corresponds to the reading level of an average college student. The higher the score, the more difficult a text.
+- The number of **difficult words** indicates the number of words with ≥ 3 syllables and which are not in a predefined list of easy words.
+- The **reading time** indicates the seconds required to read a text; each character taking 14.69ms.
+- The **syllable count** gives the number of syllables in a text.
+- The **lexicon count** gives the number of different words in a text.
+- The **sentence count** indicates how many sentences a text consists of.
+
+For these last three measures, one could argue that a simplified text should be shorter in terms of containing fewer syllables, words and sentences compared to the original text which also is in line with previous work. The artificially constructed example in Table 2 shows that this oversimplified assumption does not always hold.
+
+- **Manual Evaluation:**
+	- **PEGASUS** model produces texts, that are almost identical to the original   text.
+	- The **T5** model is significantly shorter and grammatically simpler but omits important information from the source sentence. the text still contains scientific formulations ("conceptual framework") and a case of AI hallucination in the form of reporting the text as a quote.
+	- Our automatic evaluation did not rank **ChatGPT** as the best run, a manual analysis evaluated the texts produced through ChatGPT as the best. Although we did not explicitly evaluate the inclusion of complex phrase identification in the ChatGPT run, we found it to improve the system’s effectiveness. 
+
+- **Challenges:**
+	- Labeling complex phrases using square brackets in our approach may pose challenges when the input text already contains square brackets. This problem could be circumvented by implementing an additional preprocessing step.
+	- Hallucinated content, possibly attributed to the absence of context in data. A possible improvement for the summarization model approaches would be flagging difficult words as ones we want to exclude in the simplified (summarized) variant.
