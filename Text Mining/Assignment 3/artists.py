@@ -51,6 +51,5 @@ def main():
     scrapr(r'\[\[(.*?)\]\]\}\}', urls=['https://en.wikipedia.org/wiki/List_of_blues_musicians?action=edit',])
 
     scrapr(r'==(.*?)==', urls=['https://en.wikipedia.org/wiki/Heavy_metal_genres?action=edit',
-                                        'https://en.wikipedia.org/wiki/List_of_rock_genres?action=edit',
                                         'https://en.wikipedia.org/wiki/Category:Pop_music_genres'
                                         ])
