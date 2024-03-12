@@ -1,12 +1,7 @@
-# https://en.wikipedia.org/wiki/List_of_country_music_performers?action=edit
-# https://en.wikipedia.org/wiki/List_of_blues_musicians?action=edit
-# https://en.wikipedia.org/wiki/List_of_hip_hop_musicians?action=edit
-# https://en.wikipedia.org/wiki/List_of_heavy_metal_bands?action=edit
-# https://en.wikipedia.org/wiki/List_of_alternative_rock_artists?action=edit
-# https://en.wikipedia.org/wiki/List_of_dance-pop_artists?action=edit
 import requests
 import re
 from bs4 import BeautifulSoup
+from genres import rock, pop, metal
 
 
 def scrapr(regex, urls):
@@ -17,7 +12,7 @@ def scrapr(regex, urls):
         soup = BeautifulSoup(response.text, 'html.parser')
         for artist in soup.find_all('textarea'):
             artist = artist.text
-            artists = regex.findall(artist)
+            artists = names_regex.findall(artist)
             # print(artists)
             with open(f'{url}.txt', 'w') as file:
                 for artist in artists:
@@ -25,31 +20,55 @@ def scrapr(regex, urls):
                         file.write(artist + '\n')
                     except:
                         pass
-def genre_scrapr(regex, urls):
+
+
+def genre_scrapr(regex, genre):
     names_regex = re.compile(regex)
-    for url in urls:
+    musicians = []
+    for category in genre:
+        category = category.lower()
+        url = f'https://en.wikipedia.org/wiki/List_of_{category}_bands'
         response = requests.get(url)
-        url = url.split('/')[-1].split('?')[0]
+        # print(response.status_code, url)
+        if response.status_code != 200:
+            url = f'https://en.wikipedia.org/wiki/List_of_{category}_artists'
+            response = requests.get(url)
+            # print(response.status_code, url)
+        if response.status_code != 200:
+            url = f'https://en.wikipedia.org/wiki/List_of_{category}_musicians'
+            response = requests.get(url)
+            # print(response.status_code, url)
+        if response.status_code != 200:
+            print(f'Error: {response.status_code}, no page for {category}')
+            continue
+        # print(url)
+        url = url+"?action=edit"
+        response = requests.get(url)
         soup = BeautifulSoup(response.text, 'html.parser')
         for artist in soup.find_all('textarea'):
             artist = artist.text
-            artists = regex.findall(artist)
+            artists = names_regex.findall(artist)
             # print(artists)
-            with open(f'{url}.txt', 'w') as file:
-                for artist in artists:
-                    try:
-                        file.write(artist + '\n')
-                    except:
-                        pass
+            musicians.extend(artists)
+    g = genre[0].split('_')[-1]
+    with open(f'List_of_{g}_musicians.txt', 'w') as file:
+        for m in musicians:
+            try:
+                file.write(m + '\n')
+            except:
+                pass
+
 
 def main():
-    scrapr(r'\*\[\[(.*?)\]\]', urls=[
-        'https://en.wikipedia.org/wiki/List_of_country_music_performers?action=edit',
-        'https://en.wikipedia.org/wiki/List_of_hip_hop_musicians?action=edit',
-    ])
+    # scrapr(r'\*\[\[(.*?)\]\]', urls=[
+    #     'https://en.wikipedia.org/wiki/List_of_country_music_performers?action=edit',
+    #     'https://en.wikipedia.org/wiki/List_of_hip_hop_musicians?action=edit',
+    # ])
 
-    scrapr(r'\[\[(.*?)\]\]\}\}', urls=['https://en.wikipedia.org/wiki/List_of_blues_musicians?action=edit',])
+    # scrapr(r'\[\[(.*?)\]\]\}\}',
+    #        urls=['https://en.wikipedia.org/wiki/List_of_blues_musicians?action=edit',])
 
-    scrapr(r'==(.*?)==', urls=['https://en.wikipedia.org/wiki/Heavy_metal_genres?action=edit',
-                                        'https://en.wikipedia.org/wiki/Category:Pop_music_genres'
-                                        ])
+    genre_scrapr(r'\|\[\[(.*?)\]\]', metal)
+
+
+main()
