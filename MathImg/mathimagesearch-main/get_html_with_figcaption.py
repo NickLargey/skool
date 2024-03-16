@@ -3,29 +3,29 @@ import os
 from tqdm import tqdm
 from bs4 import BeautifulSoup
 
-def get_wikipedia_html(title):
-    # Replace spaces with underscores in the title
-    title = title.replace(" ", "_")
+# def get_wikipedia_html(title):
+#     # Replace spaces with underscores in the title
+#     title = title.replace(" ", "_")
 
-    # Wikipedia URL for the given title
-    url = f"https://en.wikipedia.org/wiki/{title}"
+#     # Wikipedia URL for the given title
+#     url = f"https://en.wikipedia.org/wiki/{title}"
 
-    try:
-        # Send an HTTP GET request to the Wikipedia page
-        response = requests.get(url)
-        response.raise_for_status()  # Check for any errors in the request
+#     try:
+#         # Send an HTTP GET request to the Wikipedia page
+#         response = requests.get(url)
+#         response.raise_for_status()  # Check for any errors in the request
 
-        # Parse the HTML content
-        html_content = response.text
+#         # Parse the HTML content
+#         html_content = response.text
 
-        return html_content
+#         return html_content
 
-    except requests.exceptions.HTTPError as e:
-        print(f"HTTP error: {e}")
-    except requests.exceptions.RequestException as e:
-        print(f"Request error: {e}")
+#     except requests.exceptions.HTTPError as e:
+#         print(f"HTTP error: {e}")
+#     except requests.exceptions.RequestException as e:
+#         print(f"Request error: {e}")
 
-    return None
+#     return None
 
 def has_figcaption(html_content):
     # Parse the HTML content with BeautifulSoup
@@ -35,7 +35,7 @@ def has_figcaption(html_content):
     return soup.find("figcaption") is not None
 
 # Replace with the path to your folder containing HTML files
-folder_path = 'MathTagArticles'
+folder_path = 'NTCIR-12_MathIR_Wikipedia_Corpus/MathTagArticles'
 subfolders = [subfolder for subfolder in os.listdir(folder_path) if os.path.isdir(os.path.join(folder_path, subfolder))]
 
 output_dir = "WikiHTML"
@@ -52,7 +52,20 @@ for subfolder in subfolders:
             filename = filename[:-5]
             title = filename.replace(" ", "_")
 
-            html_content = get_wikipedia_html(title)
+            # html_content = get_wikipedia_html(title)
+            title = title.replace(" ", "_")
+
+            # Wikipedia URL for the given title
+            url = f"https://en.wikipedia.org/wiki/{title}"
+
+            # Send an HTTP GET request to the Wikipedia page
+            response = requests.get(url)
+            # response.raise_for_status()  # Check for any errors in the request
+            if response.status_code != 200:
+                continue
+
+            # Parse the HTML content
+            html_content = response.text
             if html_content and has_figcaption(html_content):
                 output_file = os.path.join(output_dir, subfolder, filename + '.html')
                 with open(output_file, 'w', encoding='utf-8') as f:

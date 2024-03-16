@@ -1,0 +1,9 @@
+*.html
+*.csv
+*.xml
+*.tar.*
+
+wikipedia_images/
+MathStackExchange/
+NTCIR-12_MathIR_Wikipedia_Corpus/
+WikiHTML/ 

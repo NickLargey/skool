@@ -35,6 +35,7 @@ with open(tsv_file_path, 'w', encoding='utf-8') as tsv_file:
     # Iterate through HTML files in the folder and extract img src, and caption
     for subfolder in subfolders:
         subfolder_path = os.path.join(folder_path, subfolder)
+        print(subfolder_path)
         html_files = [f for f in os.listdir(subfolder_path) if f.endswith('.html')]
 
         for filename in tqdm(html_files, desc="Reading HTML"):
