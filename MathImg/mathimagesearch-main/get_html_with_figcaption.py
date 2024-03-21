@@ -35,7 +35,7 @@ def has_figcaption(html_content):
     return soup.find("figcaption") is not None
 
 # Replace with the path to your folder containing HTML files
-folder_path = 'NTCIR-12_MathIR_Wikipedia_Corpus/TextArticles'
+folder_path = 'NTCIR-12_MathIR_Wikipedia_Corpus/MathTagArticles'
 subfolders = [subfolder for subfolder in os.listdir(folder_path) if os.path.isdir(os.path.join(folder_path, subfolder))]
 
 output_dir = "TextWikiHTML"
