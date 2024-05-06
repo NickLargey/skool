@@ -2,8 +2,15 @@
 *.csv
 *.xml
 *.tar.*
+*.zip
+*.png
+*.txt
 
-wikipedia_images/
-MathStackExchange/
-NTCIR-12_MathIR_Wikipedia_Corpus/
-WikiHTML/ 
+Wikipedia/wikipedia_images/*
+Math_Stack_Exchange/MathStackExchange/*
+Math_Stack_Exchange/ImageFiltering/*
+Math_Stack_Exchange/MathmaticaImages/*
+Math_Stack_Exchange/MSE_Links/*
+Wikipedia/NTCIR-12_MathIR_Wikipedia_Corpus/*
+Wikipedia/WikiHTML/* 
+

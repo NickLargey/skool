@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{natbib} % For citations
+
+\title{Methods for Solving Linear Systems and their Applications in Machine Learning and Deep Learning}
+\author{Nick Largey}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report explores various methods for solving linear systems explored in class and in the book "Explorations in Numerical Analysis" by James V Lumbers et al., focusing on the foundations, practical applications, and relevance in the fields of machine learning and deep learning. The analysis will include Gaussian Elimination, the Jacobi Iterative Method, the Gauss-Seidel Iterative Method, and Successive Over-Relaxation (SOR). Each method will be evaluated on efficiency, scalability, and applicability in order to further understand how one can apply these techniques for solving linear systems based on specific needs in an artificial intelligence application.
+\end{abstract}
+
+\section{Introduction}
+Linear systems underpin numerous scientific and engineering disciplines, providing critical solutions that drive both theoretical research and practical applications. In the rapidly evolving fields of machine learning and deep learning, solving linear systems efficiently is paramount for algorithm optimization, data processing, and model accuracy. This report delves into four principal methods: Gaussian Elimination, Jacobi Iterative Method, Gauss-Seidel Iterative Method, and Successive Overrelaxation (SOR). Each method's utility, efficiency, and suitability for various computational challenges are assessed, with a focus on their integration and impact within AI technologies.
+
+\section{Gaussian Elimination and Its Application in Machine Learning}
+Gaussian Elimination, a quintessential direct method for solving linear systems, is renowned for its methodical approach and effectiveness, particularly in handling systems of moderate size. The process involves converting the system's coefficient matrix into an upper triangular format, followed by back-substitution to derive solutions.
+
+\subsection{Theoretical Background}
+Detailed theoretical analysis of the steps involved in Gaussian Elimination, including matrix factorization and triangular decomposition, illustrates its fundamental operations and computational implications.
+
+\subsection{Relevance to Machine Learning}
+Gaussian Elimination facilitates precise computations in neural network training, especially in architectures where direct matrix inversion or determinant calculations are critical during the backpropagation phase.
+
+\subsection{Optimization Techniques}
+Explores advanced strategies such as partial pivoting and sparse matrix utilization to enhance Gaussian Elimination's computational efficiency and stability, crucial for handling larger datasets typical in machine learning scenarios.
+
+\section{Jacobi Iterative Method and Its Application in Machine Learning}
+The Jacobi Iterative Method offers a robust solution for large-scale linear systems through its iterative refinement process, starting from an initial guess. This method's simplicity and effectiveness in parallel computation environments make it particularly valuable for distributed machine learning applications.
+
+\subsection{Theoretical Background}
+An expanded discussion on the convergence properties of the Jacobi method, including necessary conditions and the impact of matrix properties on its effectiveness.
+
+\subsection{Relevance to Machine Learning}
+Illustrates how the Jacobi method supports large-scale machine learning operations, with examples from real-world applications that utilize distributed computing frameworks.
+
+\subsection{Enhancement Techniques}
+Detailed analysis of diagonal preconditioning and the Block Jacobi method, demonstrating how these enhancements improve the method’s convergence and computational efficiency.
+
+\section{Gauss-Seidel Iterative Method and Its Application in Machine Learning}
+Building on the Jacobi method, the Gauss-Seidel method updates solutions using the most recently calculated values, allowing for quicker convergence. This method is particularly effective in dynamic machine learning environments where rapid iteration is beneficial.
+
+\subsection{Theoretical Background}
+Comprehensive exploration of the mathematical foundation of the Gauss-Seidel method, including its iterative formula and convergence criteria.
+
+\subsection{Relevance to Machine Learning}
+Discusses the method's application in adaptive learning rate algorithms in deep learning, highlighting how its properties facilitate efficient training of complex models.
+
+\subsection{Improvement Techniques}
+Investigates advanced ordering techniques like red-black and multi-color ordering, which optimize the Gauss-Seidel method's performance in parallel processing environments.
+
+\section{Successive Overrelaxation (SOR) and Its Application in Machine Learning}
+Successive Overrelaxation enhances the Gauss-Seidel method by incorporating a relaxation parameter, which significantly accelerates convergence. This method is ideal for complex, large-scale systems encountered in advanced machine learning models.
+
+\subsection{Theoretical Background}
+Explores the derivation and optimization of the SOR method, including the selection of optimal relaxation parameters based on system characteristics.
+
+\subsection{Relevance to Machine Learning}
+Examines SOR’s role in optimizing deep learning training processes, particularly in adjusting learning rates dynamically to improve model convergence rates.
+
+\subsection{Enhancement Techniques}
+Details the implementation of dynamic relaxation parameters and the Block SOR method, showcasing their effectiveness in reducing computational overhead and improving convergence speed.
+
+\section{Comparison of Methods in the Context of Machine Learning}
+This section provides an in-depth comparative analysis of the discussed methods, evaluating their computational demands, scalability, and efficiency in the context of machine learning. Insights are offered on selecting the most appropriate method based on the specific requirements of machine learning tasks and data characteristics.
+
+\section{Applications}
+Extensive overview of the practical applications of linear systems in machine learning and deep learning, ranging from basic algorithmic foundations to complex system optimizations in high-stakes environments.
+
+\section{Conclusion}
+This report has provided a thorough examination of various methods for solving linear systems, highlighting their strengths, limitations, and applications in machine learning and deep learning. Key recommendations are offered for practitioners in AI, aiming to enhance the efficiency and effectiveness of computational models.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
